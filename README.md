@@ -5,4 +5,4 @@
 1. Дуплій Наталя
 2. Сірокомський Микола
 
-Сайт: lab.spmeta.lviv.ua
+Сайт: http://lab.spmeta.lviv.ua
