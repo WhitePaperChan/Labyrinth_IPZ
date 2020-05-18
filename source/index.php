@@ -1,0 +1,3 @@
+<?
+	require("LabMySQL.php");
+	//phpinfo();
