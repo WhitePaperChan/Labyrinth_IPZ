@@ -1,5 +1,7 @@
 <?php
-?>
+/**
+* form for game start
+*/?>
 <form method=post action="<?=$script?>">
 	<input type="hidden" name="game_id" value="<?=$game_id?>">
 	<input type="hidden" name="player_no" value="<?=$player_no?>">

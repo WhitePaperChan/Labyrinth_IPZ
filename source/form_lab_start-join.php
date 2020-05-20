@@ -1,4 +1,7 @@
 <?php 
+/**
+* form for join
+*/
 ?>
 	<form method=post action="LabTraining.php">
 		<input type="submit" name="Training" value="Play training game">

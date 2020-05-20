@@ -7,7 +7,9 @@
 </head>
 <body>
 <?php
-	
+/**
+* Training singleplayer game
+*/	
 $script="http://".$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"];
 $form="form_lab_parameters.php";
 $form_turn_buttons = "form_turn_buttons.php";

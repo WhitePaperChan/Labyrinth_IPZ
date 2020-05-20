@@ -1,5 +1,7 @@
 <?php 
-	
+/**
+* form for labyrinth customization
+*/	
 	// defaults
 $Xmax = 5;
 $Ymax = 5;

@@ -1,4 +1,7 @@
-<?php 
+<?php
+/**
+*form for joining
+*/ 
 ?>
 <form method=post action="<?=$script?>">
 <input type="hidden" name="game_id" value="<?=$game_id?>">

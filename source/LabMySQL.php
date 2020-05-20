@@ -7,7 +7,9 @@
 </head>
 <body>
 <?php
-	
+/**
+* Main menu, multiplayer page
+*/	
 $script="http://".$_SERVER["HTTP_HOST"].$_SERVER["SCRIPT_NAME"];
 /* 2do - constants to config file */
 $form_start_join="form_lab_start-join.php";

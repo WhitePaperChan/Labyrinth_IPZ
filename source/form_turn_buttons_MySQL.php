@@ -1,5 +1,5 @@
 <?php 
-	/* Turn buttons form fo multiplayer MySQL version */
+	/**form for multiplayer*/
 ?>
 <form method=post action="<?=$script?>">
 <input type="hidden" name="game_id" value="<?=$game_id?>">
