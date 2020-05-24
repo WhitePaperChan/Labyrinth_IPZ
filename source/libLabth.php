@@ -1,28 +1,29 @@
 <?php
 /**
- * This file contains class of labyrinth
+ * This file contains class of labyrinth. 
  */
 
 /**
- * Labth (labyrinth) class
- * Generation and reaction
- * @property int $Xmax
- * @property int $Ymax
- * @property int $minRiverLengthIndex
- * @property int $maxRiverLengthIndex
- * @property int $minRiverLength
- * @property int $maxRiverLength
- * @property boolean $allThingsTogether
- * @property boolean $showMap
- * @property array $map
- * @property array $holes
- * @property array $booms
+ * Labth (labyrinth) class.
+ * Generation of labyrinth. 
+ * Reaction of labyrinth on player's actions
+ * @property int $Xmax width of labyrinth
+ * @property int $Ymax height of labyrinth
+ * @property int $minRiverLengthIndex divider for minimum length of river
+ * @property int $maxRiverLengthIndex divider for maximum length of river
+ * @property int $minRiverLength minimum length of river
+ * @property int $maxRiverLength maximum length of river
+ * @property boolean $allThingsTogether do holes and booms can be on one spot? (booms are still separate from each other)
+ * @property boolean $showMap are the map and player coordinates shown on the page?
+ * @property array $map all cells of labyrinth
+ * @property array $holes all holes of labyrinth
+ * @property array $booms all boomes of labyrinth (including treasures, arsenal and hospital)
 */
 class Labth {
 	public $Xmax = 5;
 	public $Ymax = 5;
-	public $minRiverLengthIndex = 3;
-	public $maxRiverLengthIndex = 5;
+	public $minRiverLengthIndex = 5;
+	public $maxRiverLengthIndex = 3;
 	public $minRiverLength;
 	public $maxRiverLength;
 	public $allThingsTogether = false;
@@ -31,13 +32,13 @@ class Labth {
 	var $holes = array(); // var due tu problem with protected during oject serilizing
 	var $booms = array(); // var due tu problem with protected during oject serilizing
 /**
- * Creates labyrinth
- * @param int $Xmax
- * @param int $Ymax
- * @param int $minRiverLengthIndex
- * @param int $maxRiverLengthIndex
- * @param int $allThingsTogether
- * @param int $showMap
+ * Creates labyrinth (but don't generate it)
+ * @param int $Xmax width of labyrinth
+ * @param int $Ymax height of labyrinth
+ * @param int $minRiverLengthIndex divider for minimum length of river
+ * @param int $maxRiverLengthIndex divider for maximum length of river
+ * @param int $allThingsTogether do holes and booms can be on one spot? (booms are still separate from each other)
+ * @param int $showMap are the map and player coordinates shown on the page?
  */
     public function __construct(
     					$Xmax = 5, 
@@ -59,8 +60,9 @@ class Labth {
 		$booms = array_fill(1, 4, array('x' => 0, 'y' => 0)); // 2do const 4
     }
     /**
-	* fill cell without type
-	* @param int $cellType
+	* Returns all cells without holes/booms
+	* @param string $cellType type of cell to ignore ("hole" or "boom")
+	* @return array all cells without holes/booms
 	*/
 	function noCellTypeFill($cellType) {
 		$land = array();
@@ -76,8 +78,8 @@ class Labth {
 		return $land;
 	}
 	/**
-	* land without things
-	* @return array of things
+	* Returns all cells without EITHER holes OR booms
+	* @return array all cells without EITHER holes OR booms
 	*/
 	function landFill() {
 		$land = array();
@@ -93,9 +95,10 @@ class Labth {
 		return $land;
 	}
 	/**
-	* random cell
-	* @param int $land
-	* @param int $landSelected
+	* Pushes random cell from one array to another array
+	* @param array $land array of cells to choose from
+	* @param array $landSelected array to push random cell
+	* @return boolean is getting a random cell successful
 	*/
 	function randomCellGet(&$land, &$landSelected) {
 		if (count($land) > 0){
@@ -108,7 +111,8 @@ class Labth {
 		}
 	}
 	/**
-	* generate wall line
+	* Prepares a wall line to push in map
+	* @return array array of cells in wall line
 	*/
 	function wallLineGenerate() {
 		$wallLine = array(0);
@@ -118,7 +122,8 @@ class Labth {
 		return $wallLine;
 	}
 	/**
-	* generate cell line
+	* Prepares a walkable line to push in map
+	* @return array array of cells in walkable line
 	*/
 	function cellLineGenerate() {
 		$cellLine = array(0);
@@ -128,7 +133,7 @@ class Labth {
 		return $cellLine;
 	}
 	/**
-	* generate cells and walls
+	* Pushes in map wall lines and walkable lines
 	*/
 	function lab0Generate() {
 		array_push($this->map, $this->wallLineGenerate());
@@ -138,7 +143,7 @@ class Labth {
 		}
 	}
 	/**
-	* marks external walls
+	* Makes all external walls very-very hard to break 
 	*/
 	function markExternalWalls() {
 		for ($i = 0; $i < $this->Xmax*2+1; $i++) {
@@ -157,7 +162,7 @@ class Labth {
 		}
 	}
 	/**
-	* generates exit
+	* Generates exit in random place
 	*/
 	function labExitGenerate() {
 		$side = random_int(1, 4);
@@ -172,8 +177,8 @@ class Labth {
 		}
 	}
 	/**
-	* generate booms
-	* @param str $cellType
+	* Generates holes or booms if it's possible
+	* @param str $cellType type of cell ("hole" or "boom")
 	*/
 	function labHoleBumGenerate($cellType) { /* cellType = "hole" or "bum" */
 		if ($this->allThingsTogether){
@@ -198,9 +203,9 @@ class Labth {
 		}
 	}
 	/**
-	* creates river source
-	* @param int $sourceX
-	* @param int $sourceY
+	* Creates a river source and writes it's coordinates in given variables
+	* @param int $sourceX variable to write in x coordinate
+	* @param int $sourceY variable to write in y coordinate
 	*/
 	function riverSource(&$sourceX, &$sourceY) {
 		$side = random_int(1, 4);
@@ -215,9 +220,10 @@ class Labth {
 		}
 	}
 	/**
-	* finds river directions
-	* @param int $sourceX
-	* @param int $sourceY
+	* Finds avaliable river directions
+	* @param int $sourceX x coordinate of river source
+	* @param int $sourceY y coordinate of river source
+	* @return array array of avaliable directions
 	*/
 	function findAvailableRiverDirections($sourceX, $sourceY) {
 				$availableDirections = array();
@@ -233,9 +239,9 @@ class Labth {
 				return $availableDirections;
 	}
 	/**
-	* generates river directions
-	* @param int $sourceX
-	* @param int $sourceY
+	* Generates river direction or creates a lake
+	* @param int $sourceX x coordinate of river source
+	* @param int $sourceY y coordinate of river source
 	*/
 	function riverDirectionGenerate($sourceX, $sourceY) {
 				$availableDirections = $this->findAvailableRiverDirections($sourceX, $sourceY);
@@ -249,7 +255,7 @@ class Labth {
 				}
 	}
 	/**
-	* generates river
+	* Generates river
 	*/
 	function labRiverGenerate() {
 		$sourceY = 1; $sourceX = 1;
@@ -324,7 +330,7 @@ class Labth {
 		}
 	}
 	/**
-	* generates labyrinth
+	* Generates labyrinth
 	*/
 	public function labGenerate() {
 		$this->lab0Generate();
@@ -339,8 +345,8 @@ class Labth {
 	labPrint
 	*/
 	/**
-	* prints wall
-	* @param int $wallStrength
+	* Prints a wall cell
+	* @param int $wallStrength strength of the wall
 	*/
 	function writeWallTD($wallStrength) {
 		 	if ($wallStrength >0) {
@@ -350,8 +356,8 @@ class Labth {
 		 	}
 	}
 	/**
-	* prints cell
-	* @param array $cellContent
+	* Prints a walkable cell
+	* @param array $cellContent array of things on this cell (holes, booms, rivers)
 	*/
 	function writeCellTD($cellContent) {
 		$tdClass = "cell";
@@ -375,8 +381,8 @@ class Labth {
 		echo "<td class='".$tdClass."'>".$hole.$river.$bum."</td>";
 	}
 	/**
-	* prints wall line
-	* @param int $yLine
+	* Prints a wall line
+	* @param int $yLine y coordinate of line
 	*/
 	function wallLine($yLine) {
 		echo "<tr>";
@@ -387,8 +393,8 @@ class Labth {
 		echo "</tr>\n";
 	}
 	/**
-	* prints cell line
-	* @param int $yLine
+	* Prints a walkable line
+	* @param int $yLine y coordinate of line
 	*/
 	function cellLine($yLine) {
 		echo "<tr>";
@@ -403,7 +409,7 @@ class Labth {
 		echo "</tr>\n";
 	}
 	/**
-	* prints labyrinth
+	* Prints entire labyrinth
 	*/
 	public function labPrint() {
 		echo "<pre><table id='labMap' border=1 cellspacing=0>\n";
@@ -432,9 +438,9 @@ class Labth {
 		labReaction
 		*/
 	/**
-	* check if there is a wall
-	* @param int $direction
-	* @param object $player
+	* Checks if there is a wall
+	* @param string $direction direction of the player
+	* @param LabPlayer $player the active player
 	*/
 	function isWall($direction, $player) {
 		if ($direction == 'North'){
@@ -457,9 +463,9 @@ class Labth {
 		return true;
 	}
 	/**
-	* creates a wall
-	* @param int $direction
-	* @param object $player
+	* Creates a wall for the player
+	* @param string $direction direction of the player
+	* @param LabPlayer $player the active player
 	*/
 	function makeWall($direction, $player) {
 		if ($direction == 'North'){
@@ -474,9 +480,9 @@ class Labth {
 		return true;
 	}
 	/**
-	* expodes a wall
-	* @param int $direction
-	* @param object $player
+	* Expodes a wall
+	* @param string $direction direction of the player
+	* @param LabPlayer $player the active player
 	*/
 	function explodeWall($direction, $player) {
 		if ($direction == 'North'){
@@ -511,12 +517,11 @@ class Labth {
 		return true;
 	}
 	/**
-	* hole
-	* @param int $direction
-	* @param object $player
-	* @param object $turn
+	* Moves from one hole to another hole (1-2-3-4-1...)
+	* @param LabPlayer $player the player to move
+	* @param Turn $turn current turn to process
 	*/
-	function turnHoleMoveReaction($direction, $player, $turn) {
+	function turnHoleMoveReaction($player, $turn) {
 		$turn->noSubturn++;
 		$answer = "";
 		$holeNo = $this->map[$player->y][$player->x]["hole"];
@@ -552,12 +557,11 @@ class Labth {
 		);
 	}
 	/**
-	* river
-	* @param int $direction
-	* @param object $player
-	* @param object $turn
+	* Moves the player in the river direction
+	* @param LabPlayer $player the player to move
+	* @param Turn $turn current turn to process
 	*/
-	function turnRiverMoveReaction($direction, $player, $turn) {
+	function turnRiverMoveReaction($player, $turn) {
 		$turn->noSubturn++;
 		$answer = "";
 		$direction = $this->map[$player->y][$player->x]["river"];
@@ -577,7 +581,6 @@ class Labth {
 			if ($this->map[$player->y+1][$player->x] == 0){
 				$player->y += 2;
 			}
-		//} elseif ($direction == 5) { // not needed
 		}
 		/* 2do to functions */
 		if ($this->map[$player->y][$player->x]["bum"] > 0){
@@ -606,15 +609,15 @@ class Labth {
 			)
 		);
 		if ($this->map[$player->y][$player->x]["hole"] > 0){
-			$this->turnHoleMoveReaction($direction, $player, $turn);
+			$this->turnHoleMoveReaction($player, $turn);
 		}
 	}
 	/**
-	* move
-	* @param str $turnActin
-	* @param int $direction
-	* @param object $player
-	* @param object $turn
+	* Moves the player when they want to.
+	* @param string $turnActin current action ("move")
+	* @param int $direction direction of the player
+	* @param LabPlayer $player the player to move
+	* @param Turn $turn current turn to process
 	*/
 	function turnMoveReaction($turnActin, $direction, $player, $turn) {
 		if ($direction == 'Center'){
@@ -675,16 +678,6 @@ class Labth {
 						$answer .= "<br />You have got Fake treasure.";
 					}
 				}
-				/*$tr = $this->treasures;
-				for ($i = 0; $i < sizeof($tr); $i++){
-					if (in_array($tr[$i]["index"], $player->treasures)){
-						if ($tr[$i]["real"] == true){
-							$answer.="<br>Real";
-						} else {
-							$answer.="<br>Fake";
-						}
-					}
-				}*/
 			}
 			array_push($turn->subturns, 
 				array("noSubturn" => $turn->noSubturn, 
@@ -693,20 +686,19 @@ class Labth {
 				)
 			);
 			if ($this->map[$player->y][$player->x]["hole"] > 0){
-				$this->turnHoleMoveReaction($direction, $player, $turn);
+				$this->turnHoleMoveReaction($player, $turn);
 			} elseif ($this->map[$player->y][$player->x]["river"] > 0){
-				$this->turnRiverMoveReaction($direction, $player, $turn);
+				$this->turnRiverMoveReaction($player, $turn);
 			}
 			$turn->finished = true;
 		}
-		//return $answer;
 	}
 	/**
-	* turn explode
-	* @param str $turnActin
-	* @param int $direction
-	* @param object $player
-	* @param object $turn
+	* Processes blowing booms (blowing up nothing, hospital, arsenal, treasures
+	* @param string $turnActin current action ("bum")
+	* @param int $direction direction of the player
+	* @param LabPlayer $player the player-exploder
+	* @param Turn $turn current turn to process
 	*/
 	function turnExplodeCell($turnActin, $direction, $player, $turn) {
 		if ($this->map[$player->y][$player->x]["bum"] == 0){
@@ -758,11 +750,11 @@ class Labth {
 		}
 	}
 	/**
-	* boom reaction
-	* @param str $turnActin
-	* @param int $direction
-	* @param object $player
-	* @param object $turn
+	* Process the explode reaction (blowing without tnt, blowing booms, blowing walls)
+	* @param string $turnActin current action ("bum")
+	* @param int $direction direction of the player
+	* @param LabPlayer $player the player-exploder
+	* @param Turn $turn current turn to process
 	*/
 	function turnBumReaction($turnActin, $direction, $player, $turn) {
 		if ($player->tnt <= 0){
@@ -796,14 +788,13 @@ class Labth {
 				);
 			}
 		}
-		//return $answer;
 	}
 	/**
-	* reaction
-	* @param str $turnActin
-	* @param int $direction
-	* @param object $player
-	* @param object $turn
+	* Proccesses reaction to player actions (move, boom, cement, shoot (2do))
+	* @param string $turnActin current action ("move", "bum", "cement", "shoot")
+	* @param int $direction direction of the player
+	* @param LabPlayer $player the player-exploder
+	* @param Turn $turn current turn to process
 	*/
 	function turnLabReaction($turnActin, $direction, $player, &$turn) {
 		$answer = "";

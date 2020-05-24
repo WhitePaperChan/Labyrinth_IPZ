@@ -1,18 +1,18 @@
 <?php
 /**
-* Player and Turn
+* This file contains classes of players and turns. 
 */
 
 /** 
 * Player class
-* @property int $x x position.
-* @property int $y y position.
-* @property int $tnt number of tnt.
-* @property int $cement number of cement.
-* @property int $bullet number of bullets.
-* @property int $forfeit forfeit turns.
-* @property str $name name of player.
-* @property array $treasures real and fake treasures.
+* @property int $x x coordinate of the player
+* @property int $y y coordinate of the player
+* @property int $tnt number of player's tnt
+* @property int $cement number of player's cement
+* @property int $bullet number of player's bullets
+* @property int $forfeit forfeit turns
+* @property string $name the name of the player
+* @property array $treasures real and fake player's treasures
 */
 class LabPlayer {
 	public $x = 0;
@@ -25,14 +25,14 @@ class LabPlayer {
 	public $treasures = array();
 	
 	/**
-	* creates player
-	* @param str $name
+	* Creates the player
+	* @param string $name the name of the player
 	*/
     public function __construct($name) {
         $this->name = $name;
     }
     /**
-	* gives player an arsenal
+	* Gives the player an arsenal
 	*/
 	public function getArsenal(){
 		$this->tnt += 3;
@@ -40,29 +40,29 @@ class LabPlayer {
 		$this->bullet += 1;
 	}
 	/**
-	* gives player a treasure
-	* @param int $id
+	* Gives the player the treasure
+	* @param int $id id of the treasure
 	*/
 	public function getTreasure($id){
 		$this->treasures[] = $id;
 	}
 	/**
-	* gives player a forfeit
+	* Gives player one forfeit turn
 	*/
 	public function incForfeit(){
 		$this->forfeit++;
 	}
 	/**
-	* moves player
-	* @param int $x
-	* @param int $y
+	* Moves the player to a specific coordinate
+	* @param int $x x coordinate move to
+	* @param int $y y coordinate move to
 	*/
 	public function moveTo($x, $y){
 		$this->x = $x;
 		$this->y = $y;
 	}
 	/**
-	* show inventory
+	* Show inventory of the player (tnt, cement, bullets, treasures)
 	*/
 	public function inventoryPrint(){
 		echo "Player inventory: TNT=".$this->tnt
@@ -72,14 +72,15 @@ class LabPlayer {
 			."<br />";
 	}
 	/**
-	* show a position
+	* shows position of the player
 	*/
 	public function positionPrint(){
 		echo "Player position: X=".(($this->x+1)/2)." Y=".(($this->y+1)/2)."<br><br>\n";
 	}
 	/* API */
 	/**
-	* inventory json
+	* converts inventory to JSON
+	* @return array object of inventory
 	*/
 	public function inventoryToJSON(){
 		$inventory = array(
@@ -94,10 +95,10 @@ class LabPlayer {
 
 /**
 * Turn class
-* @property int $no number of turn.
+* @property int $no number of the turn.
 * @property int $noSubturn number of subturns.
-* @property boolean $finished is finished.
-* @property str $playerName name of the player.
+* @property boolean $finished is turn finished?
+* @property string $playerName the name of the player.
 * @property array $subturns list of subturns.
 */
 class Turn {
@@ -107,7 +108,8 @@ class Turn {
 	public $playerName = "";
 	public $subturns = array(); /* "noSubturn", "reaction", "answer" */
 	/**
-	* creates a string
+	* Converts turn object to string
+	* @return string string with player turn
 	*/
 	public function toStr(){
 		$str = '';
@@ -122,9 +124,9 @@ class Turn {
 		return $str;
 	}
 	/**
-	* starting
-	* @param str $name
-	* @param int $turnNo
+	* Starting the game for the player
+	* @param string $name the name of the player
+	* @param int $turnNo number of the turn
 	*/
 	public function landing($name, $turnNo){
 		$this->no = $turnNo;
@@ -139,7 +141,8 @@ class Turn {
 	}
 	/* API */
 	/**
-	* creates array for turn
+	* Converts turn object to array
+	* @return array array with player turn
 	*/
 	public function toArray(){
 		$turn = array("turn_no" => $this->no, "player_name" => $this->playerName);
