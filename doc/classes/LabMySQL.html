@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src').replace( /\\/g, '/');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">36</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1074263506"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1074263506" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/LabMySQL.html">LabMySQL</a></li>
+                                                    <li class="class"><a href="../classes/LabPlayer.html">LabPlayer</a></li>
+                                                    <li class="class"><a href="../classes/Labth.html">Labth</a></li>
+                                                    <li class="class"><a href="../classes/Turn.html">Turn</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>LabMySQL</h1>
+                    <p><em>Class for work with MySQL</em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/LabMySQL.html#method_connect_my_db" class="">connect_my_db()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_lastTurnsPrint" class="">lastTurnsPrint()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_games_to_join" class="">games_to_join()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_insert_game" class="">mysql_insert_game()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_get_game" class="">mysql_get_game()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_update_game_on_start" class="">mysql_update_game_on_start()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_update_game_curr_player" class="">mysql_update_game_curr_player()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_get_game_meta_str" class="">mysql_get_game_meta_str()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_update_game_player_no_max_no" class="">mysql_update_game_player_no_max_no()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_insert_player" class="">mysql_insert_player()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_update_player" class="">mysql_update_player()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_get_player" class="">mysql_get_player()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_get_players_max_no" class="">mysql_get_players_max_no()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_insert_turn" class="">mysql_insert_turn()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_insert_update_turn" class="">mysql_insert_update_turn()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_get_last_turns_table" class="">mysql_get_last_turns_table()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_mysql_get_turns_max_no" class="">mysql_get_turns_max_no()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_status_refresh" class="">status_refresh()</a><br />
+                                                                    <a href="../classes/LabMySQL.html#method_games_api_to_join" class="">games_api_to_join()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/LabMySQL.html#property_table_games" class="">$table_games</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_table_game_players" class="">$table_game_players</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_table_game_turns" class="">$table_game_turns</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_last_turns_no" class="">$last_turns_no</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_table_games" class="">$table_games</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_table_game_players" class="">$table_game_players</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_table_game_turns" class="">$table_game_turns</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_last_turns_no" class="">$last_turns_no</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_host" class="">$host</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_data_base" class="">$data_base</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_user" class="">$user</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_password" class="">$password</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/LabMySQL.html#property_host" class="">$host</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_data_base" class="">$data_base</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_user" class="">$user</a><br />
+                                                                    <a href="../classes/LabMySQL.html#property_password" class="">$password</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/libGameMySQL.html"><div class="path-wrapper">libGameMySQL.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\LabMySQL</div>
+                            </dd>
+
+                        
+                        
+                        
+                                                
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_table_games" name="property_table_games" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$table_games</h3>
+                <pre class="signature">$table_games : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_table_game_players" name="property_table_game_players" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$table_game_players</h3>
+                <pre class="signature">$table_game_players : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_table_game_turns" name="property_table_game_turns" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$table_game_turns</h3>
+                <pre class="signature">$table_game_turns : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_last_turns_no" name="property_last_turns_no" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$last_turns_no</h3>
+                <pre class="signature">$last_turns_no : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_table_games" name="property_table_games" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$table_games</h3>
+                <pre class="signature">$table_games : string</pre>
+                <p><em></em></p>
+                <p>name of the games table</p>
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_table_game_players" name="property_table_game_players" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$table_game_players</h3>
+                <pre class="signature">$table_game_players : string</pre>
+                <p><em></em></p>
+                <p>name of the players table</p>
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_table_game_turns" name="property_table_game_turns" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$table_game_turns</h3>
+                <pre class="signature">$table_game_turns : string</pre>
+                <p><em></em></p>
+                <p>name of the turns table</p>
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_last_turns_no" name="property_last_turns_no" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$last_turns_no</h3>
+                <pre class="signature">$last_turns_no : integer</pre>
+                <p><em></em></p>
+                <p>number of last turns to show</p>
+
+                                <h4>Type</h4>
+                integer
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_host" name="property_host" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$host</h3>
+                <pre class="signature">$host : string</pre>
+                <p><em></em></p>
+                <p>name of the host</p>
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_data_base" name="property_data_base" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$data_base</h3>
+                <pre class="signature">$data_base : string</pre>
+                <p><em></em></p>
+                <p>name of the database</p>
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_user" name="property_user" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$user</h3>
+                <pre class="signature">$user : string</pre>
+                <p><em></em></p>
+                <p>username (!!!only for development on local server!!!)</p>
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_password" name="property_password" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$password</h3>
+                <pre class="signature">$password : string</pre>
+                <p><em></em></p>
+                <p>password (!!!only for development on local server!!!)</p>
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_host" name="property_host" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$host</h3>
+                <pre class="signature">$host : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_data_base" name="property_data_base" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$data_base</h3>
+                <pre class="signature">$data_base : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_user" name="property_user" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$user</h3>
+                <pre class="signature">$user : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_password" name="property_password" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$password</h3>
+                <pre class="signature">$password : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_connect_my_db" name="method_connect_my_db" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">connect_my_db()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">connect_my_db(string  <span class="argument">$host</span>, string  <span class="argument">$user</span>, string  <span class="argument">$password</span>, string  <span class="argument">$data_base</span>) : \mysqli</pre>
+                <p><em>Connects to the database</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$host </td>
+                                <td><p>name of the host</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$user </td>
+                                <td><p>username (!!!only for development on local server!!!)</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$password </td>
+                                <td><p>password (!!!only for development on local server!!!)</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$data_base </td>
+                                <td><p>name of the database</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \mysqli
+                                            &mdash; <p>result of the connection</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_lastTurnsPrint" name="method_lastTurnsPrint" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">lastTurnsPrint()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">lastTurnsPrint(object  <span class="argument">$turnResult</span>) </pre>
+                <p><em>Prints last turns</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>object</td>
+                                <td>$turnResult </td>
+                                <td><p>table with last turns</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_games_to_join" name="method_games_to_join" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">games_to_join()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">games_to_join() </pre>
+                <p><em>Gets games to join</em></p>
+                
+
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            result
+                        </th>
+                        <td>
+                                                                                            <p>object tables of games to join</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_insert_game" name="method_mysql_insert_game" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_insert_game()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_insert_game(\Labth  <span class="argument">$lab</span>, string  <span class="argument">$initiator</span>) : integer</pre>
+                <p><em>Inserts game to database and return game id</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Labth.html">\Labth</a></td>
+                                <td>$lab </td>
+                                <td><p>game labyrinth</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$initiator </td>
+                                <td><p>nickname of the initiator</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>id of the game</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_get_game" name="method_mysql_get_game" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_get_game()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_get_game(integer  <span class="argument">$game_id</span>, boolean  <span class="argument">$new_game</span>, integer  <span class="argument">$max_player_no</span>, integer  <span class="argument">$curr_player</span>) </pre>
+                <p><em>Gets game by its id</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>id of the game</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$new_game </td>
+                                <td><p>is this game new</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$max_player_no </td>
+                                <td><p>number of players</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$curr_player </td>
+                                <td><p>number of current player</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            result
+                        </th>
+                        <td>
+                                                                                            <p>Labth labyrinth of the game</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_update_game_on_start" name="method_mysql_update_game_on_start" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_update_game_on_start()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_update_game_on_start(integer  <span class="argument">$game_id</span>, integer  <span class="argument">$player_no</span>) </pre>
+                <p><em>Updates game when it starts</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>id of the game</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$player_no </td>
+                                <td><p>number of the current player</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_update_game_curr_player" name="method_mysql_update_game_curr_player" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_update_game_curr_player()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_update_game_curr_player(  <span class="argument">$lab</span>, integer  <span class="argument">$game_id</span>, integer  <span class="argument">$player_no</span>, integer  <span class="argument">$max_player_no</span>, integer  <span class="argument">$curr_player</span>, boolean  <span class="argument">$finished</span>) </pre>
+                <p><em>Updates current player</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$lab </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>id of the game</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$player_no </td>
+                                <td><p>number of the current player</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$max_player_no </td>
+                                <td><p>number of players</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$curr_player </td>
+                                <td><p>number of current player</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$finished </td>
+                                <td><p>is turn finished</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_get_game_meta_str" name="method_mysql_get_game_meta_str" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_get_game_meta_str()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_get_game_meta_str(integer  <span class="argument">$game_id</span>) : string</pre>
+                <p><em>Gets info about the game (game id, iniator, date) in string form</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>id of the game</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>info about the game</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_update_game_player_no_max_no" name="method_mysql_update_game_player_no_max_no" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_update_game_player_no_max_no()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_update_game_player_no_max_no(integer  <span class="argument">$game_id</span>, integer  <span class="argument">$curr_player</span>, integer  <span class="argument">$max_player_no</span>) </pre>
+                <p><em>Updates max number of players</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>id of the game</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$curr_player </td>
+                                <td><p>number of current player</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$max_player_no </td>
+                                <td><p>number of players</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_insert_player" name="method_mysql_insert_player" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_insert_player()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_insert_player(\LabPlayer  <span class="argument">$player</span>, integer  <span class="argument">$player_no</span>, integer  <span class="argument">$game_id</span>) </pre>
+                <p><em>Inserts player in database</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/LabPlayer.html">\LabPlayer</a></td>
+                                <td>$player </td>
+                                <td><p>player to insert</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$player_no </td>
+                                <td><p>number of the player</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>number of the game</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_update_player" name="method_mysql_update_player" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_update_player()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_update_player(\LabPlayer  <span class="argument">$player</span>, integer  <span class="argument">$player_no</span>, integer  <span class="argument">$game_id</span>) </pre>
+                <p><em>Updates player</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/LabPlayer.html">\LabPlayer</a></td>
+                                <td>$player </td>
+                                <td><p>player to insert</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$player_no </td>
+                                <td><p>number of the player</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>number of the game</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_get_player" name="method_mysql_get_player" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_get_player()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_get_player(integer  <span class="argument">$game_id</span>, integer  <span class="argument">$player_no</span>) : \LabPlayer</pre>
+                <p><em>Gets player object</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>number of the game</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$player_no </td>
+                                <td><p>number of the player</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/LabPlayer.html">\LabPlayer</a>
+                                            &mdash; <p>object of player</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_get_players_max_no" name="method_mysql_get_players_max_no" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_get_players_max_no()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_get_players_max_no(integer  <span class="argument">$game_id</span>) : object</pre>
+                <p><em>Gets number of players of the game</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>number of the game</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    object
+                                            &mdash; <p>number of players</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_insert_turn" name="method_mysql_insert_turn" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_insert_turn()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_insert_turn(\Turn  <span class="argument">$currTurn</span>, integer  <span class="argument">$game_id</span>) </pre>
+                <p><em>Inserts turn in database</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Turn.html">\Turn</a></td>
+                                <td>$currTurn </td>
+                                <td><p>turn to add</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>number of the game</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_insert_update_turn" name="method_mysql_insert_update_turn" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_insert_update_turn()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_insert_update_turn(\Turn  <span class="argument">$currTurn</span>, boolean  <span class="argument">$newTurn</span>, integer  <span class="argument">$game_id</span>) </pre>
+                <p><em>Updates turn</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Turn.html">\Turn</a></td>
+                                <td>$currTurn </td>
+                                <td><p>turn to update</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$newTurn </td>
+                                <td><p>is turn new</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>number of the game</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_get_last_turns_table" name="method_mysql_get_last_turns_table" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_get_last_turns_table()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_get_last_turns_table(integer  <span class="argument">$game_id</span>) </pre>
+                <p><em>Gets table of last turns</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>number of the game</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            result
+                        </th>
+                        <td>
+                                                                                            <p>object table of last turns</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_mysql_get_turns_max_no" name="method_mysql_get_turns_max_no" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">mysql_get_turns_max_no()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">mysql_get_turns_max_no(integer  <span class="argument">$game_id</span>) </pre>
+                <p><em>Gets number of turns</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>number of the game</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            result
+                        </th>
+                        <td>
+                                                                                            <p>object number of turns</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_status_refresh" name="method_status_refresh" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">status_refresh()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">status_refresh(integer  <span class="argument">$game_id</span>, integer  <span class="argument">$player_no</span>, string  <span class="argument">$request_answer</span>) </pre>
+                <p><em>Refreshes inventory and last turns</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$game_id </td>
+                                <td><p>number of the game</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$player_no </td>
+                                <td><p>number of the player</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$request_answer </td>
+                                <td><p>string of refresh request</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_games_api_to_join" name="method_games_api_to_join" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">games_api_to_join()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">games_api_to_join() </pre>
+                <p><em>Gets games to join in JSON</em></p>
+                
+
+                
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/LabMySQL.html"><div class="path-wrapper">\LabMySQL</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">libGameMySQL.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/libGameMySQL.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on May 24th, 2020 at 16:00.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">33</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">36</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,15 +136,16 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2115844522"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-62632583"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-2115844522" class="accordion-body collapse in">
+            <div id="namespace-62632583" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
                     <ul>
-                                                                                                    <li class="class"><a href="../classes/LabPlayer.html">LabPlayer</a></li>
+                                                                                                    <li class="class"><a href="../classes/LabMySQL.html">LabMySQL</a></li>
+                                                    <li class="class"><a href="../classes/LabPlayer.html">LabPlayer</a></li>
                                                     <li class="class"><a href="../classes/Labth.html">Labth</a></li>
                                                     <li class="class"><a href="../classes/Turn.html">Turn</a></li>
                                             </ul>
@@ -389,7 +390,7 @@
                 <h3 class="public ">$no</h3>
                 <pre class="signature">$no : integer</pre>
                 <p><em></em></p>
-                <p>number of turn</p>
+                <p>number of the turn.</p>
 
                                 <h4>Type</h4>
                 integer
@@ -413,7 +414,7 @@
                 <h3 class="public ">$noSubturn</h3>
                 <pre class="signature">$noSubturn : integer</pre>
                 <p><em></em></p>
-                <p>number of subturns</p>
+                <p>number of subturns.</p>
 
                                 <h4>Type</h4>
                 integer
@@ -437,7 +438,7 @@
                 <h3 class="public ">$finished</h3>
                 <pre class="signature">$finished : boolean</pre>
                 <p><em></em></p>
-                <p>is finished</p>
+                <p>is turn finished?</p>
 
                                 <h4>Type</h4>
                 boolean
@@ -459,12 +460,12 @@
             <a id="property_playerName" name="property_playerName" class="anchor"></a>
             <article class="property">
                 <h3 class="public ">$playerName</h3>
-                <pre class="signature">$playerName : \str</pre>
+                <pre class="signature">$playerName : string</pre>
                 <p><em></em></p>
-                <p>name of the player</p>
+                <p>the name of the player.</p>
 
                                 <h4>Type</h4>
-                \str
+                string
                                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -485,7 +486,7 @@
                 <h3 class="public ">$subturns</h3>
                 <pre class="signature">$subturns : array</pre>
                 <p><em></em></p>
-                <p>list of subturns</p>
+                <p>list of subturns.</p>
 
                                 <h4>Type</h4>
                 array
@@ -515,13 +516,16 @@
             <article class="method">
                 <h3 class="public ">toStr()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">toStr() </pre>
-                <p><em>creates a string</em></p>
+                <pre class="signature" style="margin-right: 54px;">toStr() : string</pre>
+                <p><em>Converts turn object to string</em></p>
                 
 
                 
                 
-                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>string with player turn</p>
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -543,21 +547,21 @@
             <article class="method">
                 <h3 class="public ">landing()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">landing(\str  <span class="argument">$name</span>, integer  <span class="argument">$turnNo</span>) </pre>
-                <p><em>starting</em></p>
+                <pre class="signature" style="margin-right: 54px;">landing(string  <span class="argument">$name</span>, integer  <span class="argument">$turnNo</span>) </pre>
+                <p><em>Starting the game for the player</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>\str</td>
+                                <td>string</td>
                                 <td>$name </td>
-                                <td></td>
+                                <td><p>the name of the player</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$turnNo </td>
-                                <td></td>
+                                <td><p>number of the turn</p></td>
                             </tr>
                                             </table>
                 
@@ -584,13 +588,16 @@
             <article class="method">
                 <h3 class="public ">toArray()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">toArray() </pre>
-                <p><em>creates array for turn</em></p>
+                <pre class="signature" style="margin-right: 54px;">toArray() : array</pre>
+                <p><em>Converts turn object to array</em></p>
                 
 
                 
                 
-                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>array with player turn</p>
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -655,7 +662,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on May 20th, 2020 at 07:23.
+                    on May 24th, 2020 at 16:00.
                 </section>
             </section>
         </section>

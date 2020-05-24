@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">33</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">36</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,15 +136,16 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1245425804"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2046678190"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1245425804" class="accordion-body collapse in">
+            <div id="namespace-2046678190" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
                     <ul>
-                                                                                                    <li class="class"><a href="../classes/LabPlayer.html">LabPlayer</a></li>
+                                                                                                    <li class="class"><a href="../classes/LabMySQL.html">LabMySQL</a></li>
+                                                    <li class="class"><a href="../classes/LabPlayer.html">LabPlayer</a></li>
                                                     <li class="class"><a href="../classes/Labth.html">Labth</a></li>
                                                     <li class="class"><a href="../classes/Turn.html">Turn</a></li>
                                             </ul>
@@ -165,9 +166,9 @@
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
                     <h1><small>\</small>Labth</h1>
-                    <p><em>Labth (labyrinth) class
-Generation and reaction</em></p>
-                    
+                    <p><em>Labth (labyrinth) class.</em></p>
+                    <p>Generation of labyrinth.
+Reaction of labyrinth on player's actions</p>
                     
                                         
                     <section id="summary">
@@ -572,7 +573,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">$Xmax</h3>
                 <pre class="signature">$Xmax : integer</pre>
                 <p><em></em></p>
-                
+                <p>width of labyrinth</p>
 
                                 <h4>Type</h4>
                 integer
@@ -596,7 +597,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">$Ymax</h3>
                 <pre class="signature">$Ymax : integer</pre>
                 <p><em></em></p>
-                
+                <p>height of labyrinth</p>
 
                                 <h4>Type</h4>
                 integer
@@ -620,7 +621,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">$minRiverLengthIndex</h3>
                 <pre class="signature">$minRiverLengthIndex : integer</pre>
                 <p><em></em></p>
-                
+                <p>divider for minimum length of river</p>
 
                                 <h4>Type</h4>
                 integer
@@ -644,7 +645,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">$maxRiverLengthIndex</h3>
                 <pre class="signature">$maxRiverLengthIndex : integer</pre>
                 <p><em></em></p>
-                
+                <p>divider for maximum length of river</p>
 
                                 <h4>Type</h4>
                 integer
@@ -668,7 +669,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">$minRiverLength</h3>
                 <pre class="signature">$minRiverLength : integer</pre>
                 <p><em></em></p>
-                
+                <p>minimum length of river</p>
 
                                 <h4>Type</h4>
                 integer
@@ -692,7 +693,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">$maxRiverLength</h3>
                 <pre class="signature">$maxRiverLength : integer</pre>
                 <p><em></em></p>
-                
+                <p>maximum length of river</p>
 
                                 <h4>Type</h4>
                 integer
@@ -716,7 +717,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">$allThingsTogether</h3>
                 <pre class="signature">$allThingsTogether : boolean</pre>
                 <p><em></em></p>
-                
+                <p>do holes and booms can be on one spot? (booms are still separate from each other)</p>
 
                                 <h4>Type</h4>
                 boolean
@@ -740,7 +741,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">$showMap</h3>
                 <pre class="signature">$showMap : boolean</pre>
                 <p><em></em></p>
-                
+                <p>are the map and player coordinates shown on the page?</p>
 
                                 <h4>Type</h4>
                 boolean
@@ -764,7 +765,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">$map</h3>
                 <pre class="signature">$map : array</pre>
                 <p><em></em></p>
-                
+                <p>all cells of labyrinth</p>
 
                                 <h4>Type</h4>
                 array
@@ -788,7 +789,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">$holes</h3>
                 <pre class="signature">$holes : array</pre>
                 <p><em></em></p>
-                
+                <p>all holes of labyrinth</p>
 
                                 <h4>Type</h4>
                 array
@@ -812,7 +813,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">$booms</h3>
                 <pre class="signature">$booms : array</pre>
                 <p><em></em></p>
-                
+                <p>all boomes of labyrinth (including treasures, arsenal and hospital)</p>
 
                                 <h4>Type</h4>
                 array
@@ -843,7 +844,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">__construct(integer  <span class="argument">$Xmax = 5</span>, integer  <span class="argument">$Ymax = 5</span>, integer  <span class="argument">$minRiverLengthIndex = 5</span>, integer  <span class="argument">$maxRiverLengthIndex = 3</span>, integer  <span class="argument">$allThingsTogether = false</span>, integer  <span class="argument">$showMap = false</span>) </pre>
-                <p><em>Creates labyrinth</em></p>
+                <p><em>Creates labyrinth (but don&#039;t generate it)</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -851,32 +852,32 @@ Generation and reaction</em></p>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$Xmax </td>
-                                <td></td>
+                                <td><p>width of labyrinth</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$Ymax </td>
-                                <td></td>
+                                <td><p>height of labyrinth</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$minRiverLengthIndex </td>
-                                <td></td>
+                                <td><p>divider for minimum length of river</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$maxRiverLengthIndex </td>
-                                <td></td>
+                                <td><p>divider for maximum length of river</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$allThingsTogether </td>
-                                <td></td>
+                                <td><p>do holes and booms can be on one spot? (booms are still separate from each other)</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$showMap </td>
-                                <td></td>
+                                <td><p>are the map and player coordinates shown on the page?</p></td>
                             </tr>
                                             </table>
                 
@@ -903,21 +904,24 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">noCellTypeFill()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">noCellTypeFill(integer  <span class="argument">$cellType</span>) </pre>
-                <p><em>fill cell without type</em></p>
+                <pre class="signature" style="margin-right: 54px;">noCellTypeFill(string  <span class="argument">$cellType</span>) : array</pre>
+                <p><em>Returns all cells without holes/booms</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>integer</td>
+                                <td>string</td>
                                 <td>$cellType </td>
-                                <td></td>
+                                <td><p>type of cell to ignore (&quot;hole&quot; or &quot;boom&quot;)</p></td>
                             </tr>
                                             </table>
                 
                 
-                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>all cells without holes/booms</p>
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -940,14 +944,14 @@ Generation and reaction</em></p>
                 <h3 class="public ">landFill()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">landFill() : array</pre>
-                <p><em>land without things</em></p>
+                <p><em>Returns all cells without EITHER holes OR booms</em></p>
                 
 
                 
                 
                                     <h4>Returns</h4>
                     array
-                                            &mdash; <p>of things</p>
+                                            &mdash; <p>all cells without EITHER holes OR booms</p>
                                     
                             </article>
         </div>
@@ -970,26 +974,29 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">randomCellGet()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">randomCellGet(integer  <span class="argument">$land</span>, integer  <span class="argument">$landSelected</span>) </pre>
-                <p><em>random cell</em></p>
+                <pre class="signature" style="margin-right: 54px;">randomCellGet(array  <span class="argument">$land</span>, array  <span class="argument">$landSelected</span>) : boolean</pre>
+                <p><em>Pushes random cell from one array to another array</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>integer</td>
+                                <td>array</td>
                                 <td>$land </td>
-                                <td></td>
+                                <td><p>array of cells to choose from</p></td>
                             </tr>
                                                     <tr>
-                                <td>integer</td>
+                                <td>array</td>
                                 <td>$landSelected </td>
-                                <td></td>
+                                <td><p>array to push random cell</p></td>
                             </tr>
                                             </table>
                 
                 
-                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>is getting a random cell successful</p>
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1011,13 +1018,16 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">wallLineGenerate()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">wallLineGenerate() </pre>
-                <p><em>generate wall line</em></p>
+                <pre class="signature" style="margin-right: 54px;">wallLineGenerate() : array</pre>
+                <p><em>Prepares a wall line to push in map</em></p>
                 
 
                 
                 
-                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>array of cells in wall line</p>
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1039,13 +1049,16 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">cellLineGenerate()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">cellLineGenerate() </pre>
-                <p><em>generate cell line</em></p>
+                <pre class="signature" style="margin-right: 54px;">cellLineGenerate() : array</pre>
+                <p><em>Prepares a walkable line to push in map</em></p>
                 
 
                 
                 
-                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>array of cells in walkable line</p>
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1068,7 +1081,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">lab0Generate()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">lab0Generate() </pre>
-                <p><em>generate cells and walls</em></p>
+                <p><em>Pushes in map wall lines and walkable lines</em></p>
                 
 
                 
@@ -1096,7 +1109,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">markExternalWalls()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">markExternalWalls() </pre>
-                <p><em>marks external walls</em></p>
+                <p><em>Makes all external walls very-very hard to break</em></p>
                 
 
                 
@@ -1124,7 +1137,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">labExitGenerate()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">labExitGenerate() </pre>
-                <p><em>generates exit</em></p>
+                <p><em>Generates exit in random place</em></p>
                 
 
                 
@@ -1152,7 +1165,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">labHoleBumGenerate()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">labHoleBumGenerate(\str  <span class="argument">$cellType</span>) </pre>
-                <p><em>generate booms</em></p>
+                <p><em>Generates holes or booms if it&#039;s possible</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -1160,7 +1173,7 @@ Generation and reaction</em></p>
                                                     <tr>
                                 <td>\str</td>
                                 <td>$cellType </td>
-                                <td></td>
+                                <td><p>type of cell (&quot;hole&quot; or &quot;boom&quot;)</p></td>
                             </tr>
                                             </table>
                 
@@ -1188,7 +1201,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">riverSource()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">riverSource(integer  <span class="argument">$sourceX</span>, integer  <span class="argument">$sourceY</span>) </pre>
-                <p><em>creates river source</em></p>
+                <p><em>Creates a river source and writes it&#039;s coordinates in given variables</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -1196,12 +1209,12 @@ Generation and reaction</em></p>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$sourceX </td>
-                                <td></td>
+                                <td><p>variable to write in x coordinate</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$sourceY </td>
-                                <td></td>
+                                <td><p>variable to write in y coordinate</p></td>
                             </tr>
                                             </table>
                 
@@ -1228,8 +1241,8 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">findAvailableRiverDirections()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">findAvailableRiverDirections(integer  <span class="argument">$sourceX</span>, integer  <span class="argument">$sourceY</span>) </pre>
-                <p><em>finds river directions</em></p>
+                <pre class="signature" style="margin-right: 54px;">findAvailableRiverDirections(integer  <span class="argument">$sourceX</span>, integer  <span class="argument">$sourceY</span>) : array</pre>
+                <p><em>Finds avaliable river directions</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -1237,17 +1250,20 @@ Generation and reaction</em></p>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$sourceX </td>
-                                <td></td>
+                                <td><p>x coordinate of river source</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$sourceY </td>
-                                <td></td>
+                                <td><p>y coordinate of river source</p></td>
                             </tr>
                                             </table>
                 
                 
-                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>array of avaliable directions</p>
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1270,7 +1286,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">riverDirectionGenerate()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">riverDirectionGenerate(integer  <span class="argument">$sourceX</span>, integer  <span class="argument">$sourceY</span>) </pre>
-                <p><em>generates river directions</em></p>
+                <p><em>Generates river direction or creates a lake</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -1278,12 +1294,12 @@ Generation and reaction</em></p>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$sourceX </td>
-                                <td></td>
+                                <td><p>x coordinate of river source</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$sourceY </td>
-                                <td></td>
+                                <td><p>y coordinate of river source</p></td>
                             </tr>
                                             </table>
                 
@@ -1311,7 +1327,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">labRiverGenerate()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">labRiverGenerate() </pre>
-                <p><em>generates river</em></p>
+                <p><em>Generates river</em></p>
                 
 
                 
@@ -1339,7 +1355,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">labGenerate()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">labGenerate() </pre>
-                <p><em>generates labyrinth</em></p>
+                <p><em>Generates labyrinth</em></p>
                 
 
                 
@@ -1367,7 +1383,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">writeWallTD()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">writeWallTD(integer  <span class="argument">$wallStrength</span>) </pre>
-                <p><em>prints wall</em></p>
+                <p><em>Prints a wall cell</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -1375,7 +1391,7 @@ Generation and reaction</em></p>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$wallStrength </td>
-                                <td></td>
+                                <td><p>strength of the wall</p></td>
                             </tr>
                                             </table>
                 
@@ -1403,7 +1419,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">writeCellTD()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">writeCellTD(array  <span class="argument">$cellContent</span>) </pre>
-                <p><em>prints cell</em></p>
+                <p><em>Prints a walkable cell</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -1411,7 +1427,7 @@ Generation and reaction</em></p>
                                                     <tr>
                                 <td>array</td>
                                 <td>$cellContent </td>
-                                <td></td>
+                                <td><p>array of things on this cell (holes, booms, rivers)</p></td>
                             </tr>
                                             </table>
                 
@@ -1439,7 +1455,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">wallLine()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">wallLine(integer  <span class="argument">$yLine</span>) </pre>
-                <p><em>prints wall line</em></p>
+                <p><em>Prints a wall line</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -1447,7 +1463,7 @@ Generation and reaction</em></p>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$yLine </td>
-                                <td></td>
+                                <td><p>y coordinate of line</p></td>
                             </tr>
                                             </table>
                 
@@ -1475,7 +1491,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">cellLine()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">cellLine(integer  <span class="argument">$yLine</span>) </pre>
-                <p><em>prints cell line</em></p>
+                <p><em>Prints a walkable line</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -1483,7 +1499,7 @@ Generation and reaction</em></p>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$yLine </td>
-                                <td></td>
+                                <td><p>y coordinate of line</p></td>
                             </tr>
                                             </table>
                 
@@ -1511,7 +1527,7 @@ Generation and reaction</em></p>
                 <h3 class="public ">labPrint()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">labPrint() </pre>
-                <p><em>prints labyrinth</em></p>
+                <p><em>Prints entire labyrinth</em></p>
                 
 
                 
@@ -1538,21 +1554,21 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">isWall()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">isWall(integer  <span class="argument">$direction</span>, object  <span class="argument">$player</span>) </pre>
-                <p><em>check if there is a wall</em></p>
+                <pre class="signature" style="margin-right: 54px;">isWall(string  <span class="argument">$direction</span>, \LabPlayer  <span class="argument">$player</span>) </pre>
+                <p><em>Checks if there is a wall</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>integer</td>
+                                <td>string</td>
                                 <td>$direction </td>
-                                <td></td>
+                                <td><p>direction of the player</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/LabPlayer.html">\LabPlayer</a></td>
                                 <td>$player </td>
-                                <td></td>
+                                <td><p>the active player</p></td>
                             </tr>
                                             </table>
                 
@@ -1579,21 +1595,21 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">makeWall()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">makeWall(integer  <span class="argument">$direction</span>, object  <span class="argument">$player</span>) </pre>
-                <p><em>creates a wall</em></p>
+                <pre class="signature" style="margin-right: 54px;">makeWall(string  <span class="argument">$direction</span>, \LabPlayer  <span class="argument">$player</span>) </pre>
+                <p><em>Creates a wall for the player</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>integer</td>
+                                <td>string</td>
                                 <td>$direction </td>
-                                <td></td>
+                                <td><p>direction of the player</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/LabPlayer.html">\LabPlayer</a></td>
                                 <td>$player </td>
-                                <td></td>
+                                <td><p>the active player</p></td>
                             </tr>
                                             </table>
                 
@@ -1620,21 +1636,21 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">explodeWall()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">explodeWall(integer  <span class="argument">$direction</span>, object  <span class="argument">$player</span>) </pre>
-                <p><em>expodes a wall</em></p>
+                <pre class="signature" style="margin-right: 54px;">explodeWall(string  <span class="argument">$direction</span>, \LabPlayer  <span class="argument">$player</span>) </pre>
+                <p><em>Expodes a wall</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>integer</td>
+                                <td>string</td>
                                 <td>$direction </td>
-                                <td></td>
+                                <td><p>direction of the player</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/LabPlayer.html">\LabPlayer</a></td>
                                 <td>$player </td>
-                                <td></td>
+                                <td><p>the active player</p></td>
                             </tr>
                                             </table>
                 
@@ -1661,26 +1677,21 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">turnHoleMoveReaction()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">turnHoleMoveReaction(integer  <span class="argument">$direction</span>, object  <span class="argument">$player</span>, object  <span class="argument">$turn</span>) </pre>
-                <p><em>hole</em></p>
-                
+                <pre class="signature" style="margin-right: 54px;">turnHoleMoveReaction(\LabPlayer  <span class="argument">$player</span>, \Turn  <span class="argument">$turn</span>) </pre>
+                <p><em>Moves from one hole to another hole (1-2-3-4-1.</em></p>
+                <p>..)</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>integer</td>
-                                <td>$direction </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td>object</td>
+                                <td><a href="../classes/LabPlayer.html">\LabPlayer</a></td>
                                 <td>$player </td>
-                                <td></td>
+                                <td><p>the player to move</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/Turn.html">\Turn</a></td>
                                 <td>$turn </td>
-                                <td></td>
+                                <td><p>current turn to process</p></td>
                             </tr>
                                             </table>
                 
@@ -1707,26 +1718,21 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">turnRiverMoveReaction()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">turnRiverMoveReaction(integer  <span class="argument">$direction</span>, object  <span class="argument">$player</span>, object  <span class="argument">$turn</span>) </pre>
-                <p><em>river</em></p>
+                <pre class="signature" style="margin-right: 54px;">turnRiverMoveReaction(\LabPlayer  <span class="argument">$player</span>, \Turn  <span class="argument">$turn</span>) </pre>
+                <p><em>Moves the player in the river direction</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>integer</td>
-                                <td>$direction </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td>object</td>
+                                <td><a href="../classes/LabPlayer.html">\LabPlayer</a></td>
                                 <td>$player </td>
-                                <td></td>
+                                <td><p>the player to move</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/Turn.html">\Turn</a></td>
                                 <td>$turn </td>
-                                <td></td>
+                                <td><p>current turn to process</p></td>
                             </tr>
                                             </table>
                 
@@ -1753,31 +1759,31 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">turnMoveReaction()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">turnMoveReaction(\str  <span class="argument">$turnActin</span>, integer  <span class="argument">$direction</span>, object  <span class="argument">$player</span>, object  <span class="argument">$turn</span>) </pre>
-                <p><em>move</em></p>
+                <pre class="signature" style="margin-right: 54px;">turnMoveReaction(string  <span class="argument">$turnActin</span>, integer  <span class="argument">$direction</span>, \LabPlayer  <span class="argument">$player</span>, \Turn  <span class="argument">$turn</span>) </pre>
+                <p><em>Moves the player when they want to.</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>\str</td>
+                                <td>string</td>
                                 <td>$turnActin </td>
-                                <td></td>
+                                <td><p>current action (&quot;move&quot;)</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$direction </td>
-                                <td></td>
+                                <td><p>direction of the player</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/LabPlayer.html">\LabPlayer</a></td>
                                 <td>$player </td>
-                                <td></td>
+                                <td><p>the player to move</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/Turn.html">\Turn</a></td>
                                 <td>$turn </td>
-                                <td></td>
+                                <td><p>current turn to process</p></td>
                             </tr>
                                             </table>
                 
@@ -1804,31 +1810,31 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">turnExplodeCell()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">turnExplodeCell(\str  <span class="argument">$turnActin</span>, integer  <span class="argument">$direction</span>, object  <span class="argument">$player</span>, object  <span class="argument">$turn</span>) </pre>
-                <p><em>turn explode</em></p>
+                <pre class="signature" style="margin-right: 54px;">turnExplodeCell(string  <span class="argument">$turnActin</span>, integer  <span class="argument">$direction</span>, \LabPlayer  <span class="argument">$player</span>, \Turn  <span class="argument">$turn</span>) </pre>
+                <p><em>Processes blowing booms (blowing up nothing, hospital, arsenal, treasures</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>\str</td>
+                                <td>string</td>
                                 <td>$turnActin </td>
-                                <td></td>
+                                <td><p>current action (&quot;bum&quot;)</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$direction </td>
-                                <td></td>
+                                <td><p>direction of the player</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/LabPlayer.html">\LabPlayer</a></td>
                                 <td>$player </td>
-                                <td></td>
+                                <td><p>the player-exploder</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/Turn.html">\Turn</a></td>
                                 <td>$turn </td>
-                                <td></td>
+                                <td><p>current turn to process</p></td>
                             </tr>
                                             </table>
                 
@@ -1855,31 +1861,31 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">turnBumReaction()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">turnBumReaction(\str  <span class="argument">$turnActin</span>, integer  <span class="argument">$direction</span>, object  <span class="argument">$player</span>, object  <span class="argument">$turn</span>) </pre>
-                <p><em>boom reaction</em></p>
+                <pre class="signature" style="margin-right: 54px;">turnBumReaction(string  <span class="argument">$turnActin</span>, integer  <span class="argument">$direction</span>, \LabPlayer  <span class="argument">$player</span>, \Turn  <span class="argument">$turn</span>) </pre>
+                <p><em>Process the explode reaction (blowing without tnt, blowing booms, blowing walls)</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>\str</td>
+                                <td>string</td>
                                 <td>$turnActin </td>
-                                <td></td>
+                                <td><p>current action (&quot;bum&quot;)</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$direction </td>
-                                <td></td>
+                                <td><p>direction of the player</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/LabPlayer.html">\LabPlayer</a></td>
                                 <td>$player </td>
-                                <td></td>
+                                <td><p>the player-exploder</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/Turn.html">\Turn</a></td>
                                 <td>$turn </td>
-                                <td></td>
+                                <td><p>current turn to process</p></td>
                             </tr>
                                             </table>
                 
@@ -1906,31 +1912,31 @@ Generation and reaction</em></p>
             <article class="method">
                 <h3 class="public ">turnLabReaction()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">turnLabReaction(\str  <span class="argument">$turnActin</span>, integer  <span class="argument">$direction</span>, object  <span class="argument">$player</span>, object  <span class="argument">$turn</span>) </pre>
-                <p><em>reaction</em></p>
+                <pre class="signature" style="margin-right: 54px;">turnLabReaction(string  <span class="argument">$turnActin</span>, integer  <span class="argument">$direction</span>, \LabPlayer  <span class="argument">$player</span>, \Turn  <span class="argument">$turn</span>) </pre>
+                <p><em>Proccesses reaction to player actions (move, boom, cement, shoot (2do))</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>\str</td>
+                                <td>string</td>
                                 <td>$turnActin </td>
-                                <td></td>
+                                <td><p>current action (&quot;move&quot;, &quot;bum&quot;, &quot;cement&quot;, &quot;shoot&quot;)</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$direction </td>
-                                <td></td>
+                                <td><p>direction of the player</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/LabPlayer.html">\LabPlayer</a></td>
                                 <td>$player </td>
-                                <td></td>
+                                <td><p>the player-exploder</p></td>
                             </tr>
                                                     <tr>
-                                <td>object</td>
+                                <td><a href="../classes/Turn.html">\Turn</a></td>
                                 <td>$turn </td>
-                                <td></td>
+                                <td><p>current turn to process</p></td>
                             </tr>
                                             </table>
                 
@@ -2000,7 +2006,7 @@ Generation and reaction</em></p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on May 20th, 2020 at 07:23.
+                    on May 24th, 2020 at 16:00.
                 </section>
             </section>
         </section>

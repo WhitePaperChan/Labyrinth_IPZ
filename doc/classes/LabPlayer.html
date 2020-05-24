@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">33</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">36</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,15 +136,16 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1494178494"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-564986851"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1494178494" class="accordion-body collapse in">
+            <div id="namespace-564986851" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
                     <ul>
-                                                                                                    <li class="class"><a href="../classes/LabPlayer.html">LabPlayer</a></li>
+                                                                                                    <li class="class"><a href="../classes/LabMySQL.html">LabMySQL</a></li>
+                                                    <li class="class"><a href="../classes/LabPlayer.html">LabPlayer</a></li>
                                                     <li class="class"><a href="../classes/Labth.html">Labth</a></li>
                                                     <li class="class"><a href="../classes/Turn.html">Turn</a></li>
                                             </ul>
@@ -472,7 +473,7 @@
                 <h3 class="public ">$x</h3>
                 <pre class="signature">$x : integer</pre>
                 <p><em></em></p>
-                <p>x position.</p>
+                <p>x coordinate of the player</p>
 
                                 <h4>Type</h4>
                 integer
@@ -496,7 +497,7 @@
                 <h3 class="public ">$y</h3>
                 <pre class="signature">$y : integer</pre>
                 <p><em></em></p>
-                <p>y position.</p>
+                <p>y coordinate of the player</p>
 
                                 <h4>Type</h4>
                 integer
@@ -520,7 +521,7 @@
                 <h3 class="public ">$tnt</h3>
                 <pre class="signature">$tnt : integer</pre>
                 <p><em></em></p>
-                <p>number of tnt.</p>
+                <p>number of player's tnt</p>
 
                                 <h4>Type</h4>
                 integer
@@ -544,7 +545,7 @@
                 <h3 class="public ">$cement</h3>
                 <pre class="signature">$cement : integer</pre>
                 <p><em></em></p>
-                <p>number of cement.</p>
+                <p>number of player's cement</p>
 
                                 <h4>Type</h4>
                 integer
@@ -568,7 +569,7 @@
                 <h3 class="public ">$bullet</h3>
                 <pre class="signature">$bullet : integer</pre>
                 <p><em></em></p>
-                <p>number of bullets.</p>
+                <p>number of player's bullets</p>
 
                                 <h4>Type</h4>
                 integer
@@ -592,7 +593,7 @@
                 <h3 class="public ">$forfeit</h3>
                 <pre class="signature">$forfeit : integer</pre>
                 <p><em></em></p>
-                <p>forfeit turns.</p>
+                <p>forfeit turns</p>
 
                                 <h4>Type</h4>
                 integer
@@ -614,12 +615,12 @@
             <a id="property_name" name="property_name" class="anchor"></a>
             <article class="property">
                 <h3 class="public ">$name</h3>
-                <pre class="signature">$name : \str</pre>
+                <pre class="signature">$name : string</pre>
                 <p><em></em></p>
-                <p>name of player.</p>
+                <p>the name of the player</p>
 
                                 <h4>Type</h4>
-                \str
+                string
                                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -640,7 +641,7 @@
                 <h3 class="public ">$treasures</h3>
                 <pre class="signature">$treasures : array</pre>
                 <p><em></em></p>
-                <p>real and fake treasures.</p>
+                <p>real and fake player's treasures</p>
 
                                 <h4>Type</h4>
                 array
@@ -670,16 +671,16 @@
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(\str  <span class="argument">$name</span>) </pre>
-                <p><em>creates player</em></p>
+                <pre class="signature" style="margin-right: 54px;">__construct(string  <span class="argument">$name</span>) </pre>
+                <p><em>Creates the player</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>\str</td>
+                                <td>string</td>
                                 <td>$name </td>
-                                <td></td>
+                                <td><p>the name of the player</p></td>
                             </tr>
                                             </table>
                 
@@ -707,7 +708,7 @@
                 <h3 class="public ">getArsenal()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getArsenal() </pre>
-                <p><em>gives player an arsenal</em></p>
+                <p><em>Gives the player an arsenal</em></p>
                 
 
                 
@@ -735,7 +736,7 @@
                 <h3 class="public ">getTreasure()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getTreasure(integer  <span class="argument">$id</span>) </pre>
-                <p><em>gives player a treasure</em></p>
+                <p><em>Gives the player the treasure</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -743,7 +744,7 @@
                                                     <tr>
                                 <td>integer</td>
                                 <td>$id </td>
-                                <td></td>
+                                <td><p>id of the treasure</p></td>
                             </tr>
                                             </table>
                 
@@ -771,7 +772,7 @@
                 <h3 class="public ">incForfeit()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">incForfeit() </pre>
-                <p><em>gives player a forfeit</em></p>
+                <p><em>Gives player one forfeit turn</em></p>
                 
 
                 
@@ -799,7 +800,7 @@
                 <h3 class="public ">moveTo()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">moveTo(integer  <span class="argument">$x</span>, integer  <span class="argument">$y</span>) </pre>
-                <p><em>moves player</em></p>
+                <p><em>Moves the player to a specific coordinate</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -807,12 +808,12 @@
                                                     <tr>
                                 <td>integer</td>
                                 <td>$x </td>
-                                <td></td>
+                                <td><p>x coordinate move to</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer</td>
                                 <td>$y </td>
-                                <td></td>
+                                <td><p>y coordinate move to</p></td>
                             </tr>
                                             </table>
                 
@@ -840,7 +841,7 @@
                 <h3 class="public ">inventoryPrint()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">inventoryPrint() </pre>
-                <p><em>show inventory</em></p>
+                <p><em>Show inventory of the player (tnt, cement, bullets, treasures)</em></p>
                 
 
                 
@@ -868,7 +869,7 @@
                 <h3 class="public ">positionPrint()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">positionPrint() </pre>
-                <p><em>show a position</em></p>
+                <p><em>shows position of the player</em></p>
                 
 
                 
@@ -895,13 +896,16 @@
             <article class="method">
                 <h3 class="public ">inventoryToJSON()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">inventoryToJSON() </pre>
-                <p><em>inventory json</em></p>
+                <pre class="signature" style="margin-right: 54px;">inventoryToJSON() : array</pre>
+                <p><em>converts inventory to JSON</em></p>
                 
 
                 
                 
-                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>object of inventory</p>
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -966,7 +970,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on May 20th, 2020 at 07:23.
+                    on May 24th, 2020 at 16:00.
                 </section>
             </section>
         </section>
