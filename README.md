@@ -6,3 +6,4 @@
 2. Сірокомський Микола
 
 Сайт: http://lab.spmeta.lviv.ua
+JS версія (експериментральна): github.com/WhitePaperChan/Labyrinth_JS
